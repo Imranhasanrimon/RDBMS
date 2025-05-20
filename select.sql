@@ -41,7 +41,7 @@ VALUES (
         22,
         'A',
         'sociology',
-        'tania@gmail.com',
+        NULL,
         '2001-06-14',
         'A+',
         'Pakistan'
@@ -74,7 +74,7 @@ VALUES (
         25,
         'A-',
         'history',
-        'mehzabin@gmail.com',
+        NULL,
         '1999-05-05',
         'AB+',
         'Bangladesh'
@@ -85,7 +85,7 @@ VALUES (
         23,
         'A+',
         'physics',
-        'asif@gmail.com',
+        NULL,
         '2002-01-25',
         'O-',
         'China'
@@ -173,7 +173,7 @@ VALUES (
         26,
         'B',
         'economics',
-        'arif@gmail.com',
+        NULL,
         '1998-12-18',
         'B-',
         'Bangladesh'
@@ -225,3 +225,25 @@ SELECT avg(age) FROM students;
 SELECT count(age) FROM students;
 
 SELECT max(length(fname)) FROM students;
+
+SELECT * FROM students WHERE NOT country = 'Bangladesh';
+
+SELECT * FROM students WHERE email IS NULL;
+
+SELECT COALESCE(email, 'not provided') as "Email" FROM students;
+
+SELECT * FROM students WHERE country IN ('Russia', 'Pakistan');
+
+SELECT * FROM students WHERE age BETWEEN 22 AND 25 ORDER BY age;
+
+SELECT * FROM students WHERE country LIKE 'B%';
+
+SELECT * FROM students WHERE country ILIKE 'b%';
+
+SELECT * FROM students LIMIT 5 OFFSET 5 * 0;
+
+SELECT * FROM students LIMIT 5 OFFSET 5 * 1;
+
+SELECT avg(age) FROM students WHERE course = 'philosophy';
+
+SELECT * FROM students;
