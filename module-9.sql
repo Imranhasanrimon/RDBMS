@@ -135,3 +135,7 @@ SELECT * FROM employees NATURAL JOIN departments;
 SELECT * FROM employees;
 
 SELECT * FROM departments;
+
+DROP TABLE employees;
+
+DROP TABLE departments;
